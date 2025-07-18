@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Libs Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Mad Libs Generator</h1>
+        <form method="POST">
+            <label>Noun:</label>
+            <input type="text" name="noun" required>
+
+            <label>Verb:</label>
+            <input type="text" name="verb" required>
+
+            <label>Adjective:</label>
+            <input type="text" name="adjective" required>
+
+            <label>Place:</label>
+            <input type="text" name="place" required>
+
+            <label>Person's Name:</label>
+            <input type="text" name="person" required>
+
+            <button type="submit">Generate Story</button>
+        </form>
+
+        {% if story %}
+        <div class="result">
+            <h2>Your Mad Lib:</h2>
+            <p>{{ story }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
